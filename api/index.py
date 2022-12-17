@@ -17,13 +17,5 @@ class handler(BaseHTTPRequestHandler):
         ip_addr3 = request.environ.get('HTTP_X_FORWARDED_FOR', request.remote_addr)
 	
 	
-        self.wfile.write("</BR>" +"</BR>" +"</BR>" +"<h1>Welcome to My PY website!</h1>"+"</BR>" + "<h1> Your IP address is:" + ip_addr1 +"</BR>" + "<h1> Your IP address is:" + ip_addr2 + "</BR>" + "<h1> Your IP address is:" + ip_addr3)
+        return "</BR>" +"</BR>" +"</BR>" +"<h1>Welcome to My PY website!</h1>"+"</BR>" + "<h1> Your IP address is:" + ip_addr1 +"</BR>" + "<h1> Your IP address is:" + ip_addr2 + "</BR>" + "<h1> Your IP address is:" + ip_addr3
 
-
-		if "name" in dic:
-			message = "Hello, " + dic["name"] + "!"
-		else:
-			message = "Hello, stranger!"
-
-		self.wfile.write(message.encode())
-		return
